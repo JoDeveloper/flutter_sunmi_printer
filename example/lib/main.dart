@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             SizedBox(height: 50),
             Center(
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: _print,
                 child: const Text('Print demo', style: TextStyle(fontSize: 20)),
               ),

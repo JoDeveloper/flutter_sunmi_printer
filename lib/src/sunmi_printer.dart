@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 /*
  * flutter_sunmi_printer
  * Created by Andrey U.
@@ -8,8 +10,10 @@
 
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_sunmi_printer/src/enums.dart';
+
 import 'sunmi_col.dart';
 import 'sunmi_styles.dart';
 
@@ -28,8 +32,7 @@ class SunmiPrinter {
   static const String PRINT_IMAGE = "printImage";
   static const String CUT_PAPER = "cutPaper";
 
-  static const MethodChannel _channel =
-      const MethodChannel('flutter_sunmi_printer');
+  static const MethodChannel _channel = MethodChannel('flutter_sunmi_printer');
 
   static Future<void> reset() async {
     await _channel.invokeMethod(RESET);
@@ -84,19 +87,18 @@ class SunmiPrinter {
   /// A row contains up to 12 columns. A column has a width between 1 and 12.
   /// Total width of columns in one row must be equal to 12.
   static Future<void> row({
-    List<SunmiCol> cols,
-    bool bold: false,
-    bool underline: false,
-    SunmiSize textSize: SunmiSize.md,
-    int linesAfter: 0,
+    required List<SunmiCol> cols,
+    bool bold = false,
+    bool underline = false,
+    SunmiSize textSize = SunmiSize.md,
+    int linesAfter = 0,
   }) async {
     final isSumValid = cols.fold(0, (int sum, col) => sum + col.width) == 12;
     if (!isSumValid) {
       throw Exception('Total columns width must be equal to 12');
     }
 
-    final colsJson = List<Map<String, String>>.from(
-        cols.map<Map<String, String>>((SunmiCol col) => col.toJson()));
+    final colsJson = List<Map<String, String>>.from(cols.map<Map<String, String>>((SunmiCol col) => col.toJson()));
 
     await _channel.invokeMethod(PRINT_ROW, {
       "cols": json.encode(colsJson),
@@ -125,7 +127,7 @@ class SunmiPrinter {
 
   static Future<void> image(
     String base64, {
-    SunmiAlign align: SunmiAlign.center,
+    SunmiAlign align = SunmiAlign.center,
   }) async {
     await _channel.invokeMethod(PRINT_IMAGE, {
       "base64": base64,
