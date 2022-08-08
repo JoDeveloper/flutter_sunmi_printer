@@ -3,7 +3,10 @@ version '1.0'
 
 buildscript {
     repositories {
-        maven { url 'http://maven.aliyun.com/repository/google' }
+        maven { 
+            url 'http://maven.aliyun.com/repository/google'
+            allowInsecureProtocol = true
+         }
         maven { url 'http://maven.aliyun.com/repository/jcenter' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
