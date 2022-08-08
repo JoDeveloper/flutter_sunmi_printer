@@ -1,7 +1,7 @@
 name: flutter_sunmi_printer
 description: Flutter plugin allows to print thermal receipts using Sunmi device with a built-in printer
-version: 0.2.1
-homepage: https://github.com/andrey-ushakov/flutter_sunmi_printer
+version: 0.2.2
+homepage: https://github.com/JoDeveloper/flutter_sunmi_printer
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
