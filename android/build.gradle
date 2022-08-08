@@ -3,19 +3,19 @@ version '1.0'
 
 buildscript {
     repositories {
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/repository/google'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/repository/jcenter'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/nexus/content/groups/public'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin'
             allowInsecureProtocol = true
          }
@@ -30,19 +30,19 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/repository/google'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/repository/jcenter'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/nexus/content/groups/public'
             allowInsecureProtocol = true
          }
-        maven { 
+        maven2 { 
             url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin'
             allowInsecureProtocol = true
          }
